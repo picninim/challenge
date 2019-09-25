@@ -1,0 +1,14 @@
+@import "~src/scss/vars";
+
+:host {
+  display: block;
+  > div {
+    display: inline;
+  }
+}
+.number, .duration {
+  color: $grey;
+}
+.name {
+  color: #FFF;
+}

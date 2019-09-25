@@ -1,0 +1,12 @@
+<div [appScrollTrigger] (scrolling)="handleScroll($event)">
+    <div class="content search" [ngClass]="{'loading': loading}">
+      <input  placeholder="Começe a escrever..." [ngModel]="filter.q" (ngModelChange)="handleChange($event)" />
+    </div>
+    <div class="content" [ngSwitch]="!!filter.q">
+        <app-recent-albums *ngSwitchCase="false"></app-recent-albums>
+        <app-albums-results  *ngSwitchCase="true" [search]="filter.q" [albums]="albums" ></app-albums-results>
+    </div>
+
+    <h2 class="content" *ngIf="!loading && filter.q && albums.length <= 0"> Nada encontrado  </h2>
+
+  </div>

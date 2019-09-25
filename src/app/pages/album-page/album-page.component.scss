@@ -1,0 +1,52 @@
+@import "~src/scss/vars";
+
+:host {
+  color: #FFF;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  @extend %content;
+}
+.content {
+  display: flex;
+  height: 100%;
+  overflow: auto;
+  margin-right: -7.8vw;
+  @media screen and (max-width: 900px) {
+    display: block;
+    margin-left: -7.8vw;
+  }
+}
+app-album {
+  min-width: 300px;
+  position: sticky;
+  top: 0;
+  @media screen and (max-width: 900px) {
+    min-width: 0;
+    width: 50%;
+    position: relative;
+    margin: auto;
+  }
+}
+.tracks {
+  display: table;
+  width: 100%;
+  margin: 0 60px;
+  max-width: 860px;
+  @media screen and (max-width: 900px) {
+    margin: 0;
+  }
+  ::ng-deep {
+    > app-track {
+      display: table-row;
+      > * {
+        display: table-cell !important;
+        padding: 15px;
+        &.name {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+}

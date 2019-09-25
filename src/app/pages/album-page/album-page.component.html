@@ -1,0 +1,9 @@
+
+<p [routerLink]="['albums']"> < Voltar </p>
+<div class="content">
+    <app-album [album]="album"></app-album>
+    <div class="tracks">
+      <app-track *ngFor="let track of tracks" [track]="track"></app-track>
+    </div>
+</div>
+

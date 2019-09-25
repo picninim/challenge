@@ -1,0 +1,31 @@
+:host {
+    > div {
+        display: flex;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        margin: 0 -35px;
+        > app-album {
+            width: 20%;
+            padding: 20px 35px;
+            box-sizing: border-box;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+            @media screen and (max-width: 1300px) {
+                width: 25%;
+            }
+            @media screen and (max-width: 1200px) {
+                width: 33%;
+            }
+            @media screen and (max-width: 900px) {
+                width: 50%;
+            }
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
+        }
+    }
+
+
+}

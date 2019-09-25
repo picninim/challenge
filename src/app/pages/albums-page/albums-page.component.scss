@@ -1,0 +1,62 @@
+@import "~src/scss/vars";
+
+:host {
+    display: block;
+    height: 100%;
+    > div {
+        height: 100%;
+        overflow: auto;
+    }
+}
+input {
+    border: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-bottom: 1px solid;
+    color: #FFF;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 3em;
+    outline: none !important;
+    font-weight: bold;
+    border-color: $grey;
+    padding-right: 80px;
+    &::placeholder {
+        color: $grey;
+    }
+}
+.content {
+    @extend %content;
+}
+.search {
+    position: sticky;
+    top: 0;
+    background: $black;
+    z-index: 1;
+    &.loading {
+        &:after {
+            content: " ";
+            display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: loading 1.2s linear infinite;
+            position: absolute;
+            right: 0;
+            top: 20px;
+          }
+    }
+}
+
+@keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
